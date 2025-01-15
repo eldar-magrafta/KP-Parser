@@ -693,15 +693,21 @@
 
           <div class="grid">
             <div>
+              <label style="color: #22c55e">Index:</label>
+              <div class="value-box">
+                <div id="boxIndex" class="value"></div>
+              </div>
+            </div>
+            <div>
               <label style="color: #3b82f6">Account (KP id):</label>
               <div class="value-box">
                 <div id="boxAccount" class="value"></div>
               </div>
             </div>
             <div>
-              <label style="color: #22c55e">Index:</label>
+              <label style="color: #f97316">Event Type:</label>
               <div class="value-box">
-                <div id="boxIndex" class="value"></div>
+                <div id="boxEventType" class="value"></div>
               </div>
             </div>
             <div>
@@ -714,12 +720,6 @@
               <label style="color: #ff00ff">Repeater #:</label>
               <div class="value-box">
                 <div id="boxRepeater" class="value"></div>
-              </div>
-            </div>
-            <div>
-              <label style="color: #f97316">Event Type:</label>
-              <div class="value-box">
-                <div id="boxEventType" class="value"></div>
               </div>
             </div>
           </div>
@@ -1388,7 +1388,7 @@
         const parts = [
           { text: str.slice(0, 4), color: "#000000" }, // Header
           { text: str.slice(4, 5), color: "#22c55e" }, // Index
-          { text: str.slice(5, 6), color: "#000000" }, // 
+          { text: str.slice(5, 6), color: "#000000" }, //
           { text: str.slice(6, 11), color: "#3b82f6" }, // Account
           { text: str.slice(11, 35), color: "#000000" }, //
           { text: str.slice(35, 37), color: "#f97316" }, // Event Type secondary digits
@@ -1397,7 +1397,7 @@
           { text: str.slice(49, 50), color: "#000000" }, // stam
           { text: str.slice(50, 52), color: "#d8c724" }, // Signal Strength
           { text: str.slice(52, 54), color: "#ff00ff" }, // Repeater
-          { text: str.slice(54, 57), color: "#000000" }, // ETX + Checksum
+          { text: str.slice(54, 57), color: "#000000" }, // 
           { text: str.slice(57, 61), color: "#40ff00" }, // Year
           { text: str.slice(61, 63), color: "#0ea5e9" }, // Month
           { text: str.slice(63, 65), color: "#ca8a04" }, // Day
@@ -1414,7 +1414,7 @@
       }
 
       function parseBoxHexString(hexString) {
-        console.log(hexString)
+        console.log(hexString);
         try {
           document.getElementById("boxPreview").innerHTML =
             renderBoxPreview(hexString);
@@ -1489,7 +1489,7 @@
 
           let hexString = "DC1"; // Header
           hexString += dec2hex(index, 1);
-          hexString += "7" //dummy type
+          hexString += "7"; //dummy type
           hexString += dec2hex(account, 5);
           hexString += "0".repeat(24); // Reserved space
 
@@ -1517,9 +1517,9 @@
           hexString += dec2hex(hour, 2);
           hexString += dec2hex(minute, 2);
 
-          console.log("eldar")
-          console.log(hexString)
-          console.log("eldar2")
+          console.log("eldar");
+          console.log(hexString);
+          console.log("eldar2");
 
           document.getElementById("generatedBoxHex").innerHTML =
             renderBoxPreview(hexString);
